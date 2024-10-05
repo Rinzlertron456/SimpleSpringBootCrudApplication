@@ -7,9 +7,7 @@ function Navbar() {
         className="navbar navbar-light"
         style={{ backgroundColor: "#e3f2fd" }}
       >
-        <a className="navbar-brand" href="#">
-          Dashboard
-        </a>
+        <a className="navbar-brand">Employee Dashboard</a>
         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
           Search
         </button>
