@@ -3,14 +3,12 @@ package com.springboot.server.controller;
 import com.springboot.server.model.Employee;
 import com.springboot.server.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin("http://http://localhost:3000/")
 public class EmployeeController {
 
     @Autowired
