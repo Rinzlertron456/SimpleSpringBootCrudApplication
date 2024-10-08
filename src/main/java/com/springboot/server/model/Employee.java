@@ -9,58 +9,58 @@ public class Employee {
 
     @Id
     @GeneratedValue
-    private Long empId;
-    private String empName;
-    private String empProfile;
-    private String empDomain;
-    private Float empExperience;
-    private String empManager;
+    private Long id;
+    private String name;
+    private String designation;
+    private String domain;
+    private Float experience;
+    private String manager;
 
-    public Long getEmpId() {
-        return empId;
+    public Long getId() {
+        return id;
     }
 
-    public void setEmpId(Long empId) {
-        this.empId = empId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getEmpName() {
-        return empName;
+    public String getName() {
+        return name;
     }
 
-    public void setEmpName(String empName) {
-        this.empName = empName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getEmpProfile() {
-        return empProfile;
+    public String getDesignation() {
+        return designation;
     }
 
-    public void setEmpProfile(String empProfile) {
-        this.empProfile = empProfile;
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
 
-    public String getEmpDomain() {
-        return empDomain;
+    public String getDomain() {
+        return domain;
     }
 
-    public void setEmpDomain(String empDomain) {
-        this.empDomain = empDomain;
+    public void setDomain(String domain) {
+        this.domain = domain;
     }
 
-    public Float getEmpExperience() {
-        return empExperience;
+    public Float getExperience() {
+        return experience;
     }
 
-    public void setEmpExperience(Float empExperience) {
-        this.empExperience = empExperience;
+    public void setExperience(Float experience) {
+        this.experience = experience;
     }
 
-    public String getEmpManager() {
-        return empManager;
+    public String getManager() {
+        return manager;
     }
 
-    public void setEmpManager(String empManager) {
-        this.empManager = empManager;
+    public void setManager(String manager) {
+        this.manager = manager;
     }
 }
