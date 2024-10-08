@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
 function Home() {
   const [employees, setEmployees] = useState([]);
   const displayEmployees = async () => {
@@ -35,6 +36,11 @@ function Home() {
                   <td>{employee.empDomain}</td>
                   <td>{employee.empExperience}</td>
                   <td>{employee.empManager}</td>
+                  <td>
+                    <button className="btn btn-outline-primary mx-2">View</button>
+                    <button className="btn btn-outline-secondary mx-2">Edit</button>
+                    <button className="btn btn-outline-danger mx-2">Delete</button>
+                  </td>
                 </tr>
               );
             })}
