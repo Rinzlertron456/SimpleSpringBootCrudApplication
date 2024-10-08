@@ -1,5 +1,4 @@
 import React from "react";
-import AddEmployee from "../Features/AddEmployee";
 import { Link } from "react-router-dom";
 
 function Navbar() {
@@ -12,7 +11,7 @@ function Navbar() {
         <a className="navbar-brand mx-4">Employee Dashboard</a>
         <Link to="/addEmployee">
           <button className="btn btn-outline-success my-2 my-sm-0 mx-4">
-            Add Employee
+            ADD EMPLOYEE
           </button>
         </Link>
       </nav>

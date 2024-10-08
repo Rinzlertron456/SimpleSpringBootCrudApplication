@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-
 function Home() {
   const [employees, setEmployees] = useState([]);
   const displayEmployees = async () => {
@@ -30,16 +29,22 @@ function Home() {
             {employees.map((employee, index) => {
               return (
                 <tr key={index}>
-                  <td>{employee.empId}</td>
-                  <td>{employee.empName}</td>
-                  <td>{employee.empProfile}</td>
-                  <td>{employee.empDomain}</td>
-                  <td>{employee.empExperience}</td>
-                  <td>{employee.empManager}</td>
+                  <td>{employee.id}</td>
+                  <td>{employee.name}</td>
+                  <td>{employee.designation}</td>
+                  <td>{employee.domain}</td>
+                  <td>{employee.experience}</td>
+                  <td>{employee.manager}</td>
                   <td>
-                    <button className="btn btn-outline-primary mx-2">View</button>
-                    <button className="btn btn-outline-secondary mx-2">Edit</button>
-                    <button className="btn btn-outline-danger mx-2">Delete</button>
+                    <button className="btn btn-outline-primary mx-2">
+                      View
+                    </button>
+                    <button className="btn btn-outline-secondary mx-2">
+                      Edit
+                    </button>
+                    <button className="btn btn-outline-danger mx-2">
+                      Delete
+                    </button>
                   </td>
                 </tr>
               );
