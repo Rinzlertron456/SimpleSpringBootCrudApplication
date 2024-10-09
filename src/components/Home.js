@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
 function Home() {
   const [employees, setEmployees] = useState([]);
+  const {id}=useParams();
   const displayEmployees = async () => {
     const result = await axios.get("http://localhost:8080/employees");
     setEmployees(result.data);
   };
+  const deleteEmployee=async(id)=>{
+    await axios.delete(`http://localhost:8080/employee/${id}`);
+    displayEmployees();
+  }
   useEffect(() => {
     displayEmployees();
   }, []);
@@ -39,10 +45,10 @@ function Home() {
                     <button className="btn btn-outline-primary mx-2">
                       View
                     </button>
-                    <button className="btn btn-outline-secondary mx-2">
+                    <Link className="btn btn-outline-secondary mx-2" to={`editEmployee/${employee.id}`}>
                       Edit
-                    </button>
-                    <button className="btn btn-outline-danger mx-2">
+                    </Link>
+                    <button className="btn btn-outline-danger mx-2" onClick={()=>deleteEmployee(employee.id)}>
                       Delete
                     </button>
                   </td>
