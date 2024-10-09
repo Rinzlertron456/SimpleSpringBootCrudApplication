@@ -4,15 +4,15 @@ import { Link, useParams } from "react-router-dom";
 
 function Home() {
   const [employees, setEmployees] = useState([]);
-  const {id}=useParams();
+  const { id } = useParams();
   const displayEmployees = async () => {
     const result = await axios.get("http://localhost:8080/employees");
     setEmployees(result.data);
   };
-  const deleteEmployee=async(id)=>{
+  const deleteEmployee = async (id) => {
     await axios.delete(`http://localhost:8080/employee/${id}`);
     displayEmployees();
-  }
+  };
   useEffect(() => {
     displayEmployees();
   }, []);
@@ -42,13 +42,22 @@ function Home() {
                   <td>{employee.experience}</td>
                   <td>{employee.manager}</td>
                   <td>
-                    <button className="btn btn-outline-primary mx-2">
+                    <Link
+                      className="btn btn-outline-primary mx-2"
+                      to={`/viewEmployee/${employee.id}`}
+                    >
                       View
-                    </button>
-                    <Link className="btn btn-outline-secondary mx-2" to={`editEmployee/${employee.id}`}>
+                    </Link>
+                    <Link
+                      className="btn btn-outline-secondary mx-2"
+                      to={`editEmployee/${employee.id}`}
+                    >
                       Edit
                     </Link>
-                    <button className="btn btn-outline-danger mx-2" onClick={()=>deleteEmployee(employee.id)}>
+                    <button
+                      className="btn btn-outline-danger mx-2"
+                      onClick={() => deleteEmployee(employee.id)}
+                    >
                       Delete
                     </button>
                   </td>
